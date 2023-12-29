@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCvSharp.Sandbox", "OpenCvSharp.Sandbox.csproj", "{882D0304-1685-4A27-8CAF-18D6F5B60808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsideContours", "InsideContours\InsideContours.csproj", "{6697CD45-1B06-486B-89FD-39DCF7FE988F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{882D0304-1685-4A27-8CAF-18D6F5B60808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{882D0304-1685-4A27-8CAF-18D6F5B60808}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{882D0304-1685-4A27-8CAF-18D6F5B60808}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{882D0304-1685-4A27-8CAF-18D6F5B60808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6697CD45-1B06-486B-89FD-39DCF7FE988F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6697CD45-1B06-486B-89FD-39DCF7FE988F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6697CD45-1B06-486B-89FD-39DCF7FE988F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6697CD45-1B06-486B-89FD-39DCF7FE988F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
