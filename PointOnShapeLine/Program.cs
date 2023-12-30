@@ -16,6 +16,7 @@ var shape = shapeCreator.DrawTrapezoid(w, h);
 // 点を描画するためのカラー画像を作成
 var colorImage = new Mat(h, w, MatType.CV_8UC3);
 var points = pointOnShape.GetEquidistantPoints(shape, 100);
+if (points == null) throw new NullReferenceException();
 
 // 等間隔の点を描画
 foreach (var point in points)

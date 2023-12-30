@@ -14,8 +14,8 @@ public class InsideContours
     public Mat NextContours(Mat src)
     {
         // 輪郭の抽出
-        Cv2.FindContours(src, out Point[][] contours, out _, RetrievalModes.External,
-            ContourApproximationModes.ApproxNone);
+        var contours = src.FindContoursAsArray(RetrievalModes.External, ContourApproximationModes.ApproxNone);
+        if (contours == null) throw new NullReferenceException();
 
         // 輪郭の内側を白で塗りつぶす
         using var filledContours = src.Clone();

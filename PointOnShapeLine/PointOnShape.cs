@@ -4,12 +4,14 @@ namespace PointOnShapeLine;
 
 public class PointOnShape
 {
-    public List<Point> GetEquidistantPoints(Mat image, int count)
+    public List<Point>? GetEquidistantPoints(Mat image, int count)
     {
         // 輪郭を検出
         var contour = image
             .FindContoursAsArray(RetrievalModes.External, ContourApproximationModes.ApproxSimple)
             .MaxBy(c => c.Length);
+
+        if (contour == null) return null;
 
         // 輪郭の総距離を計算
         double totalLength = 0;
@@ -21,10 +23,10 @@ public class PointOnShape
         }
 
         // 等間隔の距離
-        double step = totalLength / count;
+        var step = totalLength / count;
 
         // 等間隔の点を取得
-        List<Point> equidistantPoints = new List<Point>();
+        var equidistantPoints = new List<Point>();
         double currentDistance = 0;
         for (int i = 0, j = 0; j < count; i = (i + 1) % contour.Length)
         {

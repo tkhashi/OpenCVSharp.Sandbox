@@ -18,4 +18,3 @@ for (var i = 0; i < 50; i++)
     Cv2.ImShow("Contours", image);
     Cv2.WaitKey(0);
 }
-
