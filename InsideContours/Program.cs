@@ -33,9 +33,12 @@ var points = shape.CalculatePolygonPoints(7, width / 2, height / 2, Math.Min(wid
 //var image = shape.DrawTrapezoid(width, height);
 //var image = shape.DrawEllipse(width, height);
 var image = shape.DrawPolygon(width, height, points);
-for (var i = 0; i < 10; i++)
+for (var i = 0; i < 50; i++)
 {
-    image = NextContours(image);
+    var newImage = NextContours(image);
+    image.Dispose();
+    image = newImage;
     Cv2.ImShow("Contours", image);
     Cv2.WaitKey(0);
 }
+
