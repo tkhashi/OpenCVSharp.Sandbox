@@ -3,13 +3,12 @@ using OpenCvSharp;
 using PointOnShapeLine;
 
 var pointOnShape = new PointOnShape();
-var shapeCreator = new ShapeCreator();
 const int w = 1920;
 const int h = 1080;
 //var shape = shapeCreator.DrawEllipse(w, h);
 ////閉じた図形ではない場合、線の周囲を輪郭として取得する
 //var shape = shapeCreator.DrawSemiCircle(w, h);
-var shape = shapeCreator.DrawTrapezoid(w, h);
+var shape = ShapeCreator.DrawTrapezoid(w, h);
 //Cv2.ImShow("shape", shape);
 //Cv2.WaitKey();
 

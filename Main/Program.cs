@@ -6,8 +6,7 @@ using OpenCvSharp;
 
 const int w = 640 * 2;
 const int h = 480 * 2;
-var mockShape = new ShapeCreator();
-var shapeObj = mockShape.DrawEllipse(w, h);
+var shapeObj = ShapeCreator.DrawEllipse(w, h);
 var shape = new Shape(shapeObj, new Point(w / 2, h / 2), w / 2, h / 2);
 
 const int count = 100;

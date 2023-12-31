@@ -2,10 +2,10 @@
 
 namespace InsideContours;
 
-public class ShapeCreator
+public static class ShapeCreator
 {
     // 台形を作る関数
-    public Mat DrawTrapezoid(int width, int height)
+    public static Mat DrawTrapezoid(int width, int height)
     {
         // 黒い背景の画像を作成
         var image = new Mat(height, width, MatType.CV_8UC1, new Scalar(0, 0, 0));
@@ -25,7 +25,7 @@ public class ShapeCreator
     }
 
     // 楕円
-    public Mat DrawEllipse(int width, int height)
+    public static Mat DrawEllipse(int width, int height)
     {
         var image = new Mat(height, width, MatType.CV_8UC1, new Scalar(0, 0, 0));
         var center = new Point(width / 2, height / 2);
@@ -35,7 +35,7 @@ public class ShapeCreator
     }
 
     // 半円
-    public Mat DrawSemiCircle(int width, int height)
+    public static Mat DrawSemiCircle(int width, int height)
     {
         var image = new Mat(height, width, MatType.CV_8UC1, new Scalar(0, 0, 0));
         var center = new Point(width / 2, height / 2);
@@ -45,7 +45,7 @@ public class ShapeCreator
     }
 
     // 多角形
-    public Mat DrawPolygon(int width, int height, Point[] points)
+    public static Mat DrawPolygon(int width, int height, Point[] points)
     {
         var image = new Mat(height, width, MatType.CV_8UC1, new Scalar(0, 0, 0));
         image.Polylines(new Point[][] { points }, true, new Scalar(255, 255, 255), 2);
@@ -60,7 +60,7 @@ public class ShapeCreator
     /// <param name="centerY"></param>
     /// <param name="radius"></param>
     /// <returns></returns>
-    public Point[] CalculatePolygonPoints(int sides, int centerX, int centerY, int radius)
+    public static Point[] CalculatePolygonPoints(int sides, int centerX, int centerY, int radius)
     {
         Point[] points = new Point[sides];
         for (int i = 0; i < sides; i++)
