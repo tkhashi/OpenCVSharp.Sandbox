@@ -1,22 +1,11 @@
-﻿using OpenCvSharp;
+﻿using System.Diagnostics;
+using OpenCvSharp;
 
 namespace DistanceTransform;
 
 public static class DistanceTransformer
 {
-    public record DistanceLabel
-    {
-        public int Y { get; }
-        public int X { get; }
-        public int Distance { get; }
-
-        public DistanceLabel(int y, int x, int distance)
-        {
-            Y = y;
-            X = x;
-            Distance = distance;
-        }
-    }
+    public record DistanceLabel(int Y, int X, int Distance);
 
     public static List<DistanceLabel> GetDistanceLabel(Mat binaryImage)
     {
@@ -50,7 +39,9 @@ public static class DistanceTransformer
         var output = binaryImage.CvtColor(ColorConversionCodes.GRAY2BGR);
         var random = new Random();
 
+        var sw = Stopwatch.StartNew();
         // 距離値ごとに色を変えて描画する（パラレル処理）
+
         Parallel.For(0, (int) maxVal + 1, distance =>
         {
             var color = new Vec3b(
@@ -65,6 +56,8 @@ public static class DistanceTransformer
                 output.Set(y, x, color);
             }
         });
+
+        Console.WriteLine(sw.ElapsedMilliseconds);
 
         // 結果を表示する
         Cv2.ImShow("Color Coded Distance Map", output);

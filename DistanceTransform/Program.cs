@@ -12,7 +12,8 @@ var contours = src.FindContoursAsArray(RetrievalModes.External, ContourApproxima
 var binaryImage = src.Clone();
 Cv2.DrawContours(binaryImage, contours, -1, new Scalar(255), -1);
 
-//DistanceTransformer.ShowDistanceColor(binaryImage);
+DistanceTransformer.ShowDistanceColor(binaryImage);
+return;
 
 var distanceLabels = DistanceTransformer.GetDistanceLabel(binaryImage);
 
